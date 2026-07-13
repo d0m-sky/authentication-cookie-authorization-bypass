@@ -67,6 +67,24 @@ Potential impact:
 - Exposure of sensitive application resources
 - Loss of access control integrity
 
+## Remediation
+
+To prevent this type of vulnerability, authorization decisions should not rely on client-controlled data.
+
+Recommended security improvements:
+
+- Store authorization information on the server side and reference it using a secure session identifier.
+- Validate user privileges on every protected endpoint.
+- Implement server-side access control checks.
+- Avoid trusting sensitive values received from the client.
+- Apply the principle of least privilege when assigning user permissions.
+
+## Lessons Learned
+
+This assessment highlighted the importance of analyzing how applications manage authentication and authorization separately.
+
+A successful login does not guarantee secure authorization. Session handling and access control mechanisms must always be reviewed for improper trust of client-side data.
+
 ## Objective
 
 The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
@@ -103,4 +121,4 @@ Recommended fixes:
 
 - Authentication and authorization should be tested separately.
 - Session mechanisms require careful analysis after login.
-- Client-controlled values must not determine user privileges.
+- Client-controlled data should never be trusted for authorization decisions.
