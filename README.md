@@ -30,6 +30,14 @@ Initial testing was performed to understand the application's authentication flo
 
 The application exposed a login form. After submitting test credentials, the response behavior and session handling mechanisms were analyzed.
 
+## Authentication Flow Analysis
+
+The authentication mechanism was reviewed to understand how user identity and session state were managed.
+
+During testing, the application accepted user input through the login form and generated a session after authentication attempts.
+
+The next step was to analyze how the application stored and validated session information between client and server.
+
 ## Objective
 
 The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
