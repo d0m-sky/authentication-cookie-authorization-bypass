@@ -30,6 +30,23 @@ Initial testing was performed to understand the application's authentication flo
 
 The application exposed a login form. After submitting test credentials, the response behavior and session handling mechanisms were analyzed.
 
+## Testing Methodology
+
+The application was tested using manual HTTP request analysis and session inspection.
+
+Tools used:
+
+- curl — for sending HTTP requests and analyzing server responses.
+- Browser developer tools — for inspecting application behavior and session data.
+- Base64 decoding utilities — for analyzing encoded session information.
+
+Initial testing included:
+
+- Reviewing HTTP responses and status codes.
+- Analyzing authentication behavior.
+- Inspecting session-related data returned by the application.
+- Verifying whether authorization decisions were properly enforced by the server.
+
 ## Authentication Flow Analysis
 
 The authentication mechanism was reviewed to understand how user identity and session state were managed.
@@ -122,3 +139,7 @@ Recommended fixes:
 - Authentication and authorization should be tested separately.
 - Session mechanisms require careful analysis after login.
 - Client-controlled data should never be trusted for authorization decisions.
+
+## Disclaimer
+
+AI tools were used as an assistant for documentation and language improvement. All testing decisions, findings, and technical analysis were performed by the author.
