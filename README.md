@@ -12,8 +12,6 @@ Authentication / Authorization
 Difficulty:
 Beginner
 
-## Overview
-
 This writeup documents the analysis of an authentication and authorization issue caused by insecure handling of client-controlled session data.
 
 The goal of the assessment was to identify whether a regular user could access functionality intended for privileged users.
@@ -23,6 +21,19 @@ The goal of the assessment was to identify whether a regular user could access f
 - CWE-639: Authorization Bypass Through User-Controlled Key
 - CWE-862: Missing Authorization
 - OWASP Top 10: A01 - Broken Access Control
+
+## Severity
+
+High
+
+The vulnerability allows privilege escalation by bypassing intended authorization controls.
+
+## Tools Used
+
+- curl — HTTP request analysis and response inspection.
+- Browser Developer Tools — application behavior and session analysis.
+- Base64 decoding utilities — analysis of encoded session data.
+- Git — version control for documentation.
 
 ## Reconnaissance
 
@@ -101,44 +112,6 @@ Recommended security improvements:
 This assessment highlighted the importance of analyzing how applications manage authentication and authorization separately.
 
 A successful login does not guarantee secure authorization. Session handling and access control mechanisms must always be reviewed for improper trust of client-side data.
-
-## Objective
-
-The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
-
-## Methodology
-
-The assessment included:
-
-1. Initial application reconnaissance
-2. Authentication testing
-3. Session cookie analysis
-4. Authorization validation
-
-## Findings
-
-The application used client-controlled session data containing authorization-related information.
-
-The server failed to properly validate the integrity of this data, which allowed unauthorized access to privileged functionality.
-
-## Impact
-
-An attacker may modify session-related data and gain access to restricted application functionality.
-
-## Remediation
-
-Recommended fixes:
-
-- Store session information server-side.
-- Use signed session tokens.
-- Validate authorization on every request.
-- Do not trust client-controlled data.
-
-## Lessons Learned
-
-- Authentication and authorization should be tested separately.
-- Session mechanisms require careful analysis after login.
-- Client-controlled data should never be trusted for authorization decisions.
 
 ## Disclaimer
 
