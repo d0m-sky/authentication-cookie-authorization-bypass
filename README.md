@@ -38,6 +38,16 @@ During testing, the application accepted user input through the login form and g
 
 The next step was to analyze how the application stored and validated session information between client and server.
 
+## Session Analysis
+
+The session management mechanism was analyzed to determine whether authorization decisions were performed securely.
+
+During the review, session-related data provided by the client was inspected. The analysis showed that sensitive authorization information was stored in a format that could be interpreted by the client.
+
+This indicated that the application relied on client-controlled data when determining user privileges.
+
+Further validation confirmed that the authorization mechanism lacked proper server-side verification.
+
 ## Objective
 
 The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
