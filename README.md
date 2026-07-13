@@ -48,6 +48,25 @@ This indicated that the application relied on client-controlled data when determ
 
 Further validation confirmed that the authorization mechanism lacked proper server-side verification.
 
+## Vulnerability Details
+
+The application contained an authorization weakness caused by insufficient validation of client-controlled session data.
+
+Authorization decisions should always be performed based on trusted server-side information. In this case, the application relied on data supplied by the client when determining user privileges.
+
+An attacker who can manipulate session-related data may be able to bypass intended access restrictions and access functionality assigned to a higher privilege level.
+
+## Security Impact
+
+The vulnerability allows unauthorized privilege escalation from a lower-privileged user context to a higher-privileged context.
+
+Potential impact:
+
+- Unauthorized access to restricted functionality
+- Privilege escalation
+- Exposure of sensitive application resources
+- Loss of access control integrity
+
 ## Objective
 
 The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
