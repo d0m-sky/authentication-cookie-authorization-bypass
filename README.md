@@ -12,6 +12,24 @@ Authentication / Authorization
 Difficulty:
 Beginner
 
+## Overview
+
+This writeup documents the analysis of an authentication and authorization issue caused by insecure handling of client-controlled session data.
+
+The goal of the assessment was to identify whether a regular user could access functionality intended for privileged users.
+
+## Vulnerability Classification
+
+- CWE-639: Authorization Bypass Through User-Controlled Key
+- CWE-862: Missing Authorization
+- OWASP Top 10: A01 - Broken Access Control
+
+## Reconnaissance
+
+Initial testing was performed to understand the application's authentication flow and available functionality.
+
+The application exposed a login form. After submitting test credentials, the response behavior and session handling mechanisms were analyzed.
+
 ## Objective
 
 The objective of this assessment was to analyze the authentication mechanism and determine whether authorization decisions relied on client-controlled session data.
